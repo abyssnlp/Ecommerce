@@ -1,0 +1,43 @@
+import React from "react";
+import { Box, Typography, InputBase, Divider, IconButton } from "@mui/material";
+import { MarkEmailReadOutlined } from "@mui/icons-material";
+import { useState } from "react";
+
+const Subscribe = () => {
+  const [email, setEmail] = useState("");
+
+  return (
+    <Box width="80%" margin="80px auto" textAlign="center">
+      <IconButton>
+        <MarkEmailReadOutlined fontSize="large" />
+      </IconButton>
+      <Typography variant="h3">Subscribe to our Newsletter</Typography>
+      <Typography>and receive Rs.200 coupon when you checkout</Typography>
+      <Box
+        padding="2px 4px"
+        margin="15px auto"
+        display="flex"
+        alignItems="center"
+        width="75%"
+        backgroundColor="#F2F2F2"
+      >
+        <InputBase
+          sx={{ ml: 1, flex: 1 }}
+          placeholder="Enter Email"
+          onChange={(e) => setEmail(e.target.value)}
+          value={email}
+        />
+        <Divider
+          sx={{ height: 28, m: 0.5 }}
+          orientation="vertical"
+          variant="middle"
+        />
+        <Typography sx={{ padding: "10px", ":hover": { cursor: "pointer" } }}>
+          Subscribe
+        </Typography>
+      </Box>
+    </Box>
+  );
+};
+
+export default Subscribe;
